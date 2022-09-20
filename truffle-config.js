@@ -36,14 +36,14 @@ module.exports = {
    */
 
   networks: {
-    rinkeby: {
+    mainnet: {
       provider: () => new HDWalletProvider({
-          providerOrUrl: "http://testnet.batterychain.info:8545", //"https://rinkeby.infura.io/v3/" + process.env.TESTNET_PROJECT_ID,
+          providerOrUrl: "https://mainnet.infura.io/v3/" + process.env.TESTNET_PROJECT_ID, //"http://testnet.batterychain.info:8545", //"https://rinkeby.infura.io/v3/" + process.env.TESTNET_PROJECT_ID,
           privateKeys: [
               process.env.TESTNET_PRIVATE_KEY
           ]
       }),
-      network_id: 4444, // chain ID
+      network_id: 1, // chain ID
       gas: 3000000, // gas limit
       gasPrice: 10000000000 // gas price in gwei
   },
@@ -98,7 +98,7 @@ module.exports = {
   contracts_build_directory: './abis/',
   compilers: {
     solc: {
-      version: "^0.8.0",      // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.16",      // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
